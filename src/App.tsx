@@ -9,16 +9,16 @@ function App() {
   const [tasks, setTasks] = useState<ITask[]>([]);
 
   function handleAddNewTask(task: ITask) {
-    setTasks((prevTasks) => [...prevTasks, task]);
+    setTasks((tasks) => [...tasks, task]);
   }
 
   function handleDeleteTask(id: string) {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    setTasks((tasks) => tasks.filter((task) => task.id !== id));
   }
 
   function toogleDoneTask(id: string) {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
+    setTasks((tasks) =>
+      tasks.map((task) =>
         task.id === id ? { ...task, done: !task.done } : task
       )
     );
